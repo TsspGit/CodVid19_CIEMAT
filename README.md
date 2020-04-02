@@ -1,6 +1,7 @@
 # CodVid19 CIEMAT
 
-## Authors: Miguel Cárdenas, Iñaki Rodríguez, Tomás Sánchez. Computation Unity of CIEMAT
+## Authors: 
+Miguel Cárdenas, Iñaki Rodríguez, Tomás Sánchez working at the Computation Unity of CIEMAT
 
 ### Outline
 * [Getting started](#1-getting-started)
