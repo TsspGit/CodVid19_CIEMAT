@@ -6,6 +6,7 @@ Miguel Cárdenas, Iñaki Rodríguez, Tomás Sánchez working at the Computation 
 ### Outline
 * [Getting started](#1-getting-started)
 * [Data and Information](#2-data-and-information)
+* [Folders explanation](#3-folders-explanation)
 
 ## 1. Getting started
 Firstly, you have to add an ssh key to your github account. To do so, just execute on the terminal:
@@ -28,3 +29,7 @@ https://github.com/lindawangg/COVID-Net
 
 Link to download the images:
 https://drive.google.com/open?id=1AQDqGTAn4XshuR76LNmHnK70TkFpAzRq
+
+## 3. Folders explanation
+### data/
+In this folder you can find a **resize/** folder with a python code for input the images and resize them. Also you can find a train and a test folder with the corresponding images.
