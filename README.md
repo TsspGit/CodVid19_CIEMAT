@@ -25,3 +25,6 @@ And the project would be copied to your current folder.
 ## 2. Data and Information
 The info about the data and how to download it is in:
 https://github.com/lindawangg/COVID-Net
+
+Link to download the images:
+https://drive.google.com/open?id=1AQDqGTAn4XshuR76LNmHnK70TkFpAzRq
