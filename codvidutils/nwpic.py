@@ -25,39 +25,24 @@ def new_pictures_arrays(pictures, strides=5, kernel=(180,180)):
     
     return news.reshape(news.shape[0]*news.shape[1], kernel[0],kernel[1],pictures.shape[3])
 
-def prob (x,y):
-    return x,y
-
-def set_session(ngpu=None, ncpu=None, mode='max'):
-    ''' This function sets the number of devices
-    you are going to work with.
-    Inputs: ngpu: number of GPUs.
-            ncpu: number of CPUs.
-            mode: "max" (default)
-    Examples:
-    - max:
-        -> set_session()
-    - And the manual mode is used if number of gpus and cpus is specified:
-        -> set_session(1, 3)
+def underbalance_imgs(diseaseID, X):
     '''
-    import tensorflow as tf
-    from keras import backend as K
-    import multiprocessing
-    gpus = len(K.tensorflow_backend._get_available_gpus())
-    cpus = multiprocessing.cpu_count()
-    print("Num GPUs Available: ", gpus)
-    print("Num CPUs Available: ", cpus)
-    if mode == 'max':
-        config = tf.ConfigProto(device_count={'GPU': gpus, 'CPU': cpus})
-        sess = tf.Session(config=config)
-        K.set_session(sess)
-        print('---------Keras session created with---------\n - {} GPUs\n - {} CPUs'.format(gpus, cpus))
-    elif (ngpu is not None) and (ncpu is not None):
-        config = tf.ConfigProto(device_count={'GPU': ngpu, 'CPU': ncpu})
-        sess = tf.Session(config=config)
-        K.set_session(sess)
-        print('---------Keras session created with---------\n - {} GPUs\n - {} CPUs'.format(ngpu, ncpu))
-    else:
-        raise ValueError('There are only two modes: manual and max.')
-        
-        
+    This function balances the data:
+    Inputs: disease_ID: array of the train and test categories.
+            X: array of the pics.
+    Usage:
+        -> disease_ID, X = balance_imgs(disease_ID, X)
+    '''
+    from collections import Counter
+    from imblearn.under_sampling import RandomUnderSampler
+    counter = Counter (diseaseID)
+    print('Count of classes: ', counter)
+    dicto = {2: 4500, 0: 4500, 1:97}
+    X = X.reshape(X.shape[0],-1)
+    under = RandomUnderSampler(sampling_strategy =dicto)
+    X, diseaseID = under.fit_resample(X, diseaseID)
+    # summarize class distribution
+    print('New diseaseID shape: ', diseaseID.shape)
+    print('New X shape: ', X.shape)
+    print('New Count of classes: ', Counter (diseaseID))
+    return diseaseID, X

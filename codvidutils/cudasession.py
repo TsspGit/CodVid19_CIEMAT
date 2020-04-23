@@ -1,7 +1,7 @@
 __author__ = '@Tssp'
 
 
-def set_session(ngpu=None, ncpu=None, mode='max'):
+def set_session(ngpu=None, ncpu=None):
     ''' This function sets the number of devices
     you are going to work with.
     Inputs: ngpu: number of GPUs.
@@ -20,7 +20,7 @@ def set_session(ngpu=None, ncpu=None, mode='max'):
     cpus = multiprocessing.cpu_count()
     print("Num GPUs Available: ", gpus)
     print("Num CPUs Available: ", cpus)
-    if mode == 'max' and (ngpu is  None) and (ncpu is None) :
+    if (ngpu is None) and (ncpu is None):
         config = tf.ConfigProto(device_count={'GPU': gpus, 'CPU': cpus})
         sess = tf.Session(config=config)
         K.set_session(sess)
@@ -32,5 +32,3 @@ def set_session(ngpu=None, ncpu=None, mode='max'):
         print('---------Keras session created with---------\n - {} GPUs\n - {} CPUs'.format(ngpu, ncpu))
     else:
         raise ValueError('There are only two modes: manual and max.')
-        
-        
