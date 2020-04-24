@@ -1,0 +1,63 @@
+2020-04-23 22:15:38.720749: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-23 22:15:38.721157: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:09.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-23 22:15:38.830136: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-23 22:15:38.830522: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:0b.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-23 22:15:38.830913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-23 22:15:39.412938: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-23 22:15:39.412979: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-23 22:15:39.412986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-23 22:15:39.412990: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-23 22:15:39.414320: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-23 22:15:39.648751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-04-23 22:15:39.886546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-23 22:15:39.886602: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-23 22:15:39.886609: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-23 22:15:39.886615: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-23 22:15:39.886632: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-23 22:15:39.886886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-23 22:15:39.887016: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+Using TensorFlow backend.
+Num GPUs Available:  2
+Num CPUs Available:  7
+---------Keras session created with---------
+ - 2 GPUs
+ - 7 CPUs
+Total number of images: 14982
+shape X: (14982, 200, 200, 3),  disease_ID (Y): (14982,)
+Count of classes:  Counter({0: 8851, 2: 6034, 1: 97})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+X_train.shape: (7277, 200, 200, 3)
+X_test.shape: (1820, 200, 200, 3)
+Normal train:  (3602,)
+Pneumonia train:  (3600,)
+COVID train:  (75,)
+*******************************************************
+Normal test:  (898,)
+Pneumonia test:  (900,)
+COVID test:  (22,)
+(1875, 180, 180, 3)
+(1875,)
+X_train.shape:  (9152, 180, 180, 3)
+diseaseID_train.shape:  (9152,)
+X_test_news.shape:  (550, 180, 180, 3)
+diseaseID_test_news.shape:  (550,)
+X_test.shape:  (2370, 180, 180, 3)
+diseaseID_test.shape:  (2370,)
+encoder_imgs.shape (2370, 23, 23, 128)
+encoder_RF_train.shape (9152, 23, 23, 128)
+Traceback (most recent call last):
+  File "Random_Forest_Analysis.py", line 125, in <module>
+    print("Accuracy:", accuracy_score(Y_test, preds))
+  File "/usr/lib64/python3.5/site-packages/sklearn/metrics/classification.py", line 176, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "/usr/lib64/python3.5/site-packages/sklearn/metrics/classification.py", line 81, in _check_targets
+    "and {1} targets".format(type_true, type_pred))
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
