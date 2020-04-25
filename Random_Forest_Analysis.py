@@ -116,13 +116,13 @@ encoder_imgs = encoder_imgs.reshape((encoder_imgs.shape[0], 23*23*128))
 preds = RF.predict(encoder_imgs)
 nocovid = preds[np.where(Y_test == 0)]
 covid = preds[np.where(Y_test == 1)]
+print("preds = ", preds)
 # Counting by thresholds
 TP_050 = np.count_nonzero(np.where((Y_test==1) & (preds>0.50)))
 FN_050 = np.count_nonzero(np.where((Y_test==1) & (preds<0.50)))
 FP_050 = np.count_nonzero(np.where((Y_test==0) & (preds>0.50)))
 TN_050 = np.count_nonzero(np.where((Y_test==0) & (preds<0.50)))
 cm = np.array([[TP_050, TN_050],[FN_050, FP_050]])
-print("Accuracy:", accuracy_score(Y_test, preds))
 print('{} of {} no COVID-19'.format(cm[0,0], np.sum(Y_test == 0)))
 print('{} of {} COVID-19'.format(cm[1,1], np.sum(Y_test == 1)))
 cm = normalize(cm, 'l1')
@@ -150,7 +150,7 @@ plt.yscale("log")
 fig2.savefig('Figures/histogram_RFregressor.png', dpi=200)
 
 # Classifier:
-RFc = RandomForestClassifier(n_estimators=100)
+RFc = RandomForestClassifier(n_estimators=100, n_jobs=-1)
 RFc.fit(encoder_RF_train, Y_train)
 preds = RFc.predict(encoder_imgs)
 cm = confusion_matrix(Y_test, preds)
