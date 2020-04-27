@@ -84,3 +84,155 @@ totalMemory: 15.89GiB freeMemory: 15.60GiB
 2020-04-24 12:34:20.900880: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
 2020-04-24 12:34:20.900899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
 2020-04-24 12:34:20.901070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-26 00:29:37.396304: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-26 00:29:37.396818: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:09.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-26 00:29:37.522655: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-26 00:29:37.523172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:0b.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-26 00:29:37.523572: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-26 00:29:38.152280: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-26 00:29:38.152321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-26 00:29:38.152328: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-26 00:29:38.152331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-26 00:29:38.153413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-26 00:29:38.387953: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-04-26 00:29:38.625449: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-26 00:29:38.625521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-26 00:29:38.625529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-26 00:29:38.625534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-26 00:29:38.625538: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-26 00:29:38.625833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-26 00:29:38.625959: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+Using TensorFlow backend.
+Num GPUs Available:  2
+Num CPUs Available:  7
+---------Keras session created with---------
+ - 2 GPUs
+ - 7 CPUs
+Total number of images: 14982
+shape X: (14982, 200, 200, 3),  disease_ID (Y): (14982,)
+Count of classes:  Counter({0: 8851, 2: 6034, 1: 97})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+X_train.shape: (7277, 200, 200, 3)
+X_test.shape: (1820, 200, 200, 3)
+Normal train:  (3585,)
+Pneumonia train:  (3611,)
+COVID train:  (81,)
+*******************************************************
+Normal test:  (915,)
+Pneumonia test:  (889,)
+COVID test:  (16,)
+(2025, 180, 180, 3)
+(2025,)
+X_train.shape:  (9302, 180, 180, 3)
+diseaseID_train.shape:  (9302,)
+X_test_news.shape:  (400, 180, 180, 3)
+diseaseID_test_news.shape:  (400,)
+X_test.shape:  (2220, 180, 180, 3)
+diseaseID_test.shape:  (2220,)
+encoder_imgs.shape (2220, 23, 23, 128)
+encoder_RF_train.shape (9302, 23, 23, 128)
+
+
+---------- Predictions ----------
+
+preds =  [0.29 0.01 0.04 ... 0.08 0.39 0.83]
+157 of 1804 no COVID-19
+26 of 416 COVID-19
+Traceback (most recent call last):
+  File "Random_Forest_Analysis.py", line 131, in <module>
+    fig1, ax = plt.subplots(figsize=(8, 6))
+  File "/usr/lib64/python3.5/site-packages/matplotlib/pyplot.py", line 1198, in subplots
+    fig = figure(**fig_kw)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/pyplot.py", line 548, in figure
+    **kwargs)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/backends/_backend_tk.py", line 1044, in new_figure_manager_given_figure
+    window = Tk.Tk(className="matplotlib")
+  File "/usr/lib64/python3.5/tkinter/__init__.py", line 1876, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+_tkinter.TclError: couldn't connect to display "localhost:10.0"
+2020-04-26 11:43:19.210444: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-26 11:43:19.210957: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:09.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-26 11:43:19.332185: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-26 11:43:19.332679: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:0b.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-26 11:43:19.332724: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-26 11:43:19.979485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-26 11:43:19.979524: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-26 11:43:19.979531: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-26 11:43:19.979535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-26 11:43:19.980569: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-26 11:43:20.214256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-04-26 11:43:20.449188: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-26 11:43:20.449269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-26 11:43:20.449278: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-26 11:43:20.449284: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-26 11:43:20.449289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-26 11:43:20.449534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-26 11:43:20.449665: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+Using TensorFlow backend.
+Num GPUs Available:  2
+Num CPUs Available:  7
+---------Keras session created with---------
+ - 2 GPUs
+ - 7 CPUs
+Total number of images: 14982
+shape X: (14982, 200, 200, 3),  disease_ID (Y): (14982,)
+Count of classes:  Counter({0: 8851, 2: 6034, 1: 97})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+X_train.shape: (7277, 200, 200, 3)
+X_test.shape: (1820, 200, 200, 3)
+Normal train:  (3589,)
+Pneumonia train:  (3614,)
+COVID train:  (74,)
+*******************************************************
+Normal test:  (911,)
+Pneumonia test:  (886,)
+COVID test:  (23,)
+(1850, 180, 180, 3)
+(1850,)
+X_train.shape:  (9127, 180, 180, 3)
+diseaseID_train.shape:  (9127,)
+X_test_news.shape:  (575, 180, 180, 3)
+diseaseID_test_news.shape:  (575,)
+X_test.shape:  (2395, 180, 180, 3)
+diseaseID_test.shape:  (2395,)
+encoder_imgs.shape (2395, 23, 23, 128)
+encoder_RF_train.shape (9127, 23, 23, 128)
+
+
+---------- Predictions ----------
+
+preds =  [0.06 0.06 0.41 ... 0.34 0.64 0.42]
+239 of 1797 no COVID-19
+9 of 598 COVID-19
+Traceback (most recent call last):
+  File "Random_Forest_Analysis.py", line 131, in <module>
+    fig1, ax = plt.subplots(figsize=(8, 6))
+  File "/usr/lib64/python3.5/site-packages/matplotlib/pyplot.py", line 1198, in subplots
+    fig = figure(**fig_kw)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/pyplot.py", line 548, in figure
+    **kwargs)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/usr/lib64/python3.5/site-packages/matplotlib/backends/_backend_tk.py", line 1044, in new_figure_manager_given_figure
+    window = Tk.Tk(className="matplotlib")
+  File "/usr/lib64/python3.5/tkinter/__init__.py", line 1876, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+_tkinter.TclError: couldn't connect to display "localhost:10.0"

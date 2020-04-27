@@ -1,4 +1,3 @@
-''' RNN Bidireccional en Keras '''
 __author__ = '@Tssp'
 import numpy as np
 import pandas as pd
@@ -116,7 +115,9 @@ encoder_imgs = encoder_imgs.reshape((encoder_imgs.shape[0], 23*23*128))
 preds = RF.predict(encoder_imgs)
 nocovid = preds[np.where(Y_test == 0)]
 covid = preds[np.where(Y_test == 1)]
+print("\n\n---------- Predictions ----------\n")
 print("preds = ", preds)
+np.savetxt('preds_RFr.txt', preds, delimiter=',')
 # Counting by thresholds
 TP_050 = np.count_nonzero(np.where((Y_test==1) & (preds>0.50)))
 FN_050 = np.count_nonzero(np.where((Y_test==1) & (preds<0.50)))
