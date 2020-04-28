@@ -18,8 +18,8 @@ from codvidutils.cudasession import set_session
 from codvidutils import nwpic as nw
 
 set_session()
-train_class = pd.read_csv('data/train_split_v4.csv', sep=' ', header=1, names=['patientID', 'image_path', 'class'])
-test_class = pd.read_csv('data/test_split_v4.csv', sep=' ', header=1, names=['patientID', 'image_path', 'class'])
+train_class = pd.read_csv('data/train_split_v4.csv', sep=' ', header=1, names=['image_path', 'class'])
+test_class = pd.read_csv('data/test_split_v4.csv', sep=' ', header=1, names=['image_path', 'class'])
 values_dict = {'pneumonia': 2, 'COVID-19': 1, 'normal': 0}
 test_class['class_categorical'] = test_class['class'].apply(map_categorical, args=(values_dict,))
 train_class['class_categorical'] = train_class['class'].apply(map_categorical, args=(values_dict,))
@@ -97,7 +97,7 @@ Y_test[Y_test==2]=0
 
 X_test = X_test/255
 X_train = X_train/255
-best_model_path = 'Autoencoder_covid_v4.hdf5'
+best_model_path = 'hdf_files/Autoencoder_covid_v4.hdf5'
 model = load_model(best_model_path)
 encoder = Model(model.layers[0].input, model.layers[6].output)
 encoder_imgs = encoder.predict(X_test)
