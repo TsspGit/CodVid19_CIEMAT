@@ -42,10 +42,12 @@ print('shape X: {},  disease_ID (Y): {}'.format(X.shape, diseaseID.shape ))
 
 diseaseID, X = nw.underbalance_imgs(diseaseID, X)
 n = np.random.randint(1000,6760)
+print('n = ', n)
 from sklearn.utils import shuffle
 X, diseaseID = shuffle(X, diseaseID, random_state=n)
 from sklearn.model_selection import train_test_split
 m = np.random.randint(1000,6760)
+print('m', m)
 X_train, X_test, diseaseID_train, diseaseID_test = train_test_split(X, diseaseID, test_size=0.20, random_state=m)
 del X, diseaseID
 
