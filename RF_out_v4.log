@@ -1,0 +1,129 @@
+python3: can't open file 'Random_Forest_Analysis.py': [Errno 2] No such file or directory
+python3: can't open file 'Random_Forest_Analysis.py': [Errno 2] No such file or directory
+python3: can't open file 'Random_Forest_Regressor.py.py': [Errno 2] No such file or directory
+2020-04-27 18:12:10.340423: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-27 18:12:10.340835: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:09.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-27 18:12:10.447648: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-27 18:12:10.448054: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:0b.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-27 18:12:10.448081: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-27 18:12:11.025534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-27 18:12:11.025573: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-27 18:12:11.025580: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-27 18:12:11.025584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-27 18:12:11.026537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-27 18:12:11.260406: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-04-27 18:12:11.496582: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-27 18:12:11.496638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-27 18:12:11.496646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-27 18:12:11.496665: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-27 18:12:11.496669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-27 18:12:11.496941: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-27 18:12:11.497067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+Using TensorFlow backend.
+Num GPUs Available:  2
+Num CPUs Available:  7
+---------Keras session created with---------
+ - 2 GPUs
+ - 7 CPUs
+Total number of images: 15140
+shape X: (15140, 200, 200, 3),  disease_ID (Y): (15140,)
+Count of classes:  Counter({0: 8851, 2: 6038, 1: 251})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+X_train.shape: (7277, 200, 200, 3)
+X_test.shape: (1820, 200, 200, 3)
+Normal train:  (3569,)
+Pneumonia train:  (3635,)
+COVID train:  (73,)
+*******************************************************
+Normal test:  (931,)
+Pneumonia test:  (865,)
+COVID test:  (24,)
+(1825, 180, 180, 3)
+(1825,)
+X_train.shape:  (9102, 180, 180, 3)
+diseaseID_train.shape:  (9102,)
+X_test_news.shape:  (600, 180, 180, 3)
+diseaseID_test_news.shape:  (600,)
+X_test.shape:  (2420, 180, 180, 3)
+diseaseID_test.shape:  (2420,)
+Traceback (most recent call last):
+  File "Random_Forest_Regressor.py", line 101, in <module>
+    model = load_model(best_model_path)
+  File "/usr/lib64/python3.5/site-packages/keras/models.py", line 237, in load_model
+    with h5py.File(filepath, mode='r') as f:
+  File "/usr/lib64/python3.5/site-packages/h5py/_hl/files.py", line 312, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, swmr=swmr)
+  File "/usr/lib64/python3.5/site-packages/h5py/_hl/files.py", line 142, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 78, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = 'Autoencoder_covid_v4.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2020-04-27 18:23:21.549692: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-27 18:23:21.550192: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:09.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-27 18:23:21.681123: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-27 18:23:21.681628: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:00:0b.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-04-27 18:23:21.681685: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-27 18:23:22.242035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-27 18:23:22.242076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-27 18:23:22.242083: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-27 18:23:22.242087: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-27 18:23:22.242658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-27 18:23:22.479139: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-04-27 18:23:22.715652: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0, 1
+2020-04-27 18:23:22.715726: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-27 18:23:22.715735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 1 
+2020-04-27 18:23:22.715740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N Y 
+2020-04-27 18:23:22.715744: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 1:   Y N 
+2020-04-27 18:23:22.715962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15128 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-04-27 18:23:22.716090: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15128 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+Using TensorFlow backend.
+Num GPUs Available:  2
+Num CPUs Available:  7
+---------Keras session created with---------
+ - 2 GPUs
+ - 7 CPUs
+Total number of images: 15140
+shape X: (15140, 200, 200, 3),  disease_ID (Y): (15140,)
+Count of classes:  Counter({0: 8851, 2: 6038, 1: 251})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+X_train.shape: (7277, 200, 200, 3)
+X_test.shape: (1820, 200, 200, 3)
+Normal train:  (3606,)
+Pneumonia train:  (3591,)
+COVID train:  (80,)
+*******************************************************
+Normal test:  (894,)
+Pneumonia test:  (909,)
+COVID test:  (17,)
+(2000, 180, 180, 3)
+(2000,)
+X_train.shape:  (9277, 180, 180, 3)
+diseaseID_train.shape:  (9277,)
+X_test_news.shape:  (425, 180, 180, 3)
+diseaseID_test_news.shape:  (425,)
+X_test.shape:  (2245, 180, 180, 3)
+diseaseID_test.shape:  (2245,)
+encoder_imgs.shape (2245, 23, 23, 128)
+encoder_RF_train.shape (9277, 23, 23, 128)
+
+
+---------- Predictions ----------
+
+preds =  [0.13  0.075 0.02  ... 0.85  0.775 0.6  ]
