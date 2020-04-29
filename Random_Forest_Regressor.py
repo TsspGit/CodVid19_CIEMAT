@@ -4,6 +4,8 @@ import pandas as pd
 import os
 from PIL import Image
 import matplotlib.pyplot as plt
+from collections import Counter
+from imblearn.under_sampling import RandomUnderSampler
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
@@ -17,40 +19,40 @@ from codvidutils.imageproc import map_categorical
 from codvidutils.cudasession import set_session
 from codvidutils import nwpic as nw
 
+#------------Read images and prepare dataset------------#
 set_session()
 train_class = pd.read_csv('data/train_split_v4.csv', sep=' ', header=1, names=['image_path', 'class'])
 test_class = pd.read_csv('data/test_split_v4.csv', sep=' ', header=1, names=['image_path', 'class'])
 values_dict = {'pneumonia': 2, 'COVID-19': 1, 'normal': 0}
 test_class['class_categorical'] = test_class['class'].apply(map_categorical, args=(values_dict,))
 train_class['class_categorical'] = train_class['class'].apply(map_categorical, args=(values_dict,))
-diseaseID_train = np.asarray(train_class["class_categorical"])
-diseaseID_test = np.asarray(test_class["class_categorical"])
-diseaseID = np.concatenate([diseaseID_train, diseaseID_test],axis=0)
 
 pics = []
 for img in train_class['image_path'].values:
     pics.append(np.array(Image.open('data/train/' + img))[:, :,:3])
+X_train = np.array(pics)
 for img in test_class['image_path'].values:
     pics.append(np.array(Image.open('data/test/' + img))[:, :, :3])
-
+X_test = np.array(pics)
 print("Total number of images:", len(pics))
-del train_class, test_class
 
-X = np.array(pics)
-del pics
-print('shape X: {},  disease_ID (Y): {}'.format(X.shape, diseaseID.shape ))
+diseaseID_train = np.asarray(train_class["class_categorical"])
+diseaseID_test = np.asarray(test_class["class_categorical"])
+print('shape X: {} {},  disease_ID (Y): {} {}'.format(X_train.shape[0], X_test.shape[0], diseaseID_train.shape[0], diseaseID_test.shape[0] ))
+del train_class, test_class, pics
 
-diseaseID, X = nw.underbalance_imgs(diseaseID, X)
-n = np.random.randint(1000,6760)
-print('n = ', n)
-from sklearn.utils import shuffle
-X, diseaseID = shuffle(X, diseaseID, random_state=n)
-from sklearn.model_selection import train_test_split
-m = np.random.randint(1000,6760)
-print('m', m)
-X_train, X_test, diseaseID_train, diseaseID_test = train_test_split(X, diseaseID, test_size=0.20, random_state=m)
-del X, diseaseID
+#------------Imbalanced methods------------#
 
+counter = Counter (diseaseID_train)
+print(counter)
+dicto = {2: 4500, 0: 4500, 1:counter[1]}
+print(dicto)
+X_train = X_train.reshape(X_train.shape[0],-1)
+print('X_train.shape: ', X_train.shape)
+under = RandomUnderSampler(sampling_strategy =dicto)
+X_train, diseaseID_train = under.fit_resample(X_train, diseaseID_train)
+# summarize class distribution
+print('Undersample shapes:\ndiseaseID_train.shape: {}\nX_train.shape: {}'.format(diseaseID_train.shape, X_train.shape))
 X_train = X_train.reshape(X_train.shape[0],200,200,3)
 X_test = X_test.reshape(X_test.shape[0],200,200,3)
 print('X_train.shape: {}\nX_test.shape: {}'.format(X_train.shape, X_test.shape))
@@ -99,6 +101,9 @@ Y_test[Y_test==2]=0
 
 X_test = X_test/255
 X_train = X_train/255
+
+#------------Use the best Autoencoder architecture------------#
+
 best_model_path = 'hdf_files/Autoencoder_covid_v4.hdf5'
 model = load_model(best_model_path)
 encoder = Model(model.layers[0].input, model.layers[6].output)
@@ -106,7 +111,8 @@ encoder_imgs = encoder.predict(X_test)
 decoder_imgs = model.predict(X_test)
 print('encoder_imgs.shape', encoder_imgs.shape)
 
-# Random Forest:
+#------------Random Forest------------#
+
 encoder_RF_train = encoder.predict(X_train)
 print('encoder_RF_train.shape', encoder_RF_train.shape)
 encoder_RF_train = encoder_RF_train.reshape((encoder_RF_train.shape[0], 23*23*128))
