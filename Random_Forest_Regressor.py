@@ -31,6 +31,7 @@ pics = []
 for img in train_class['image_path'].values:
     pics.append(np.array(Image.open('data/train/' + img))[:, :,:3])
 X_train = np.array(pics)
+pics = []
 for img in test_class['image_path'].values:
     pics.append(np.array(Image.open('data/test/' + img))[:, :, :3])
 X_test = np.array(pics)
@@ -43,14 +44,7 @@ del train_class, test_class, pics
 
 #------------Imbalanced methods------------#
 
-counter = Counter (diseaseID_train)
-print(counter)
-dicto = {2: 4500, 0: 4500, 1:counter[1]}
-print(dicto)
-X_train = X_train.reshape(X_train.shape[0],-1)
-print('X_train.shape: ', X_train.shape)
-under = RandomUnderSampler(sampling_strategy =dicto)
-X_train, diseaseID_train = under.fit_resample(X_train, diseaseID_train)
+diseaseID_train, X_train = nw.underbalance_imgs(diseaseID_train, X_train)
 # summarize class distribution
 print('Undersample shapes:\ndiseaseID_train.shape: {}\nX_train.shape: {}'.format(diseaseID_train.shape, X_train.shape))
 X_train = X_train.reshape(X_train.shape[0],200,200,3)
