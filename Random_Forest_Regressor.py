@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v4.csv')
 Y_test = outputs['Y_test']
+Y_train = outputs['Y_train']
 encoder_train = outputs['encoder_train']
 encoder_test = outputs['encoder_test']
 del outputs
@@ -15,7 +16,7 @@ del outputs
 #------------Random Forest------------#
 # Regressor:
 RF = RandomForestRegressor(n_estimators=200, n_jobs=-1)
-RF.fit(encoder_RF_train, Y_train)
+RF.fit(encoder_train, Y_train)
 encoder_imgs = encoder_imgs.reshape((encoder_imgs.shape[0], 23*23*128))
 preds = RF.predict(encoder_imgs)
 nocovid = preds[np.where(Y_test == 0)]
