@@ -108,6 +108,7 @@ print('encoder_imgs.shape', encoder_imgs.shape)
 #------------Random Forest------------#
 
 encoder_RF_train = encoder.predict(X_train)
+del X_train
 print('encoder_RF_train.shape', encoder_RF_train.shape)
 encoder_RF_train = encoder_RF_train.reshape((encoder_RF_train.shape[0], 23*23*128))
 # Regressor:
