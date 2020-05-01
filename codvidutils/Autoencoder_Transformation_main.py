@@ -45,5 +45,6 @@ def Transformation_main(train_path, test_path):
     encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
     output = {'encoder_train': encoder_train,
              'encoder_test': encoder_test,
-             'Y_test': Y_test}
+             'Y_test': Y_test,
+             'Y_train': Y_train}
     return output
