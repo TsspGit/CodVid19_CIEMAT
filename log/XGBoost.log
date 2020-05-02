@@ -1,0 +1,861 @@
+  File "XGBoost_Regressor.py", line 20
+    xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_treesm n_jobs=-1)
+                                                                                                        ^
+SyntaxError: invalid syntax
+2020-05-01 14:09:11.859392: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:09:11.859550: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:09:11.859991: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 14:09:53.382742: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 14:09:54.146094: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.147608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:09:54.147772: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.149171: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:09:54.149636: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:09:54.154218: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:09:54.164073: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:09:54.165551: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:09:54.170366: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:09:54.172968: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:09:54.183399: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:09:54.183558: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.184878: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.186127: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.187386: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.188585: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:09:54.189033: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 14:09:54.200228: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 14:09:54.200800: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b9a2ace5f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:09:54.200826: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 14:09:54.415165: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.417821: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.419250: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b9a2440370 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:09:54.419296: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:09:54.419308: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:09:54.419969: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.421914: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:09:54.422055: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.423937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:09:54.424039: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:09:54.424085: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:09:54.424125: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:09:54.424165: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:09:54.424205: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:09:54.424244: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:09:54.424284: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:09:54.424395: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.426348: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.428334: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.430300: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.432168: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:09:54.432849: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:09:54.439043: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 14:09:54.439083: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 14:09:54.439096: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 14:09:54.439105: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 14:09:54.439863: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.441748: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.443602: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.445383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 14:09:54.446142: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:09:54.447842: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 14:09:56.673707: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:09:57.877136: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 21, in <module>
+    xgbr.fit(encoder_RF_train, Y_train)
+NameError: name 'encoder_RF_train' is not defined
+2020-05-01 14:11:23.123867: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:11:23.123997: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:11:23.124007: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 14:12:05.196843: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 14:12:06.007985: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.009348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:12:06.009470: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.014001: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:12:06.014421: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:12:06.018353: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:12:06.027569: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:12:06.028792: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:12:06.032946: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:12:06.034598: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:12:06.043895: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:12:06.044039: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.047398: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.048553: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.049715: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.051398: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:12:06.051828: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 14:12:06.062566: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 14:12:06.063199: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5638849f4840 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:12:06.063224: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 14:12:06.257497: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.260333: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.261794: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563884366be0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:12:06.261837: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:12:06.261849: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:12:06.262769: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.264718: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:12:06.264854: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.266735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:12:06.266830: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:12:06.266875: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:12:06.266913: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:12:06.266951: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:12:06.266988: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:12:06.267026: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:12:06.267064: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:12:06.267171: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.269121: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.271084: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.273029: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.274887: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:12:06.275479: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:12:06.281464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 14:12:06.281503: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 14:12:06.281516: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 14:12:06.281524: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 14:12:06.282156: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.284044: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.285868: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.287595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 14:12:06.288417: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:12:06.290089: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 14:12:08.222718: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:12:09.471464: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 21, in <module>
+    xgbr.fit(encoder_train, Y_train)
+NameError: name 'Y_train' is not defined
+2020-05-01 14:18:54.850603: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:18:54.850722: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 14:18:54.850735: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 14:19:37.433870: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 14:19:38.196425: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.197836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:19:38.197961: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.199311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:19:38.199753: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:19:38.203898: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:19:38.212604: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:19:38.213865: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:19:38.218027: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:19:38.219719: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:19:38.228980: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:19:38.229129: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.230384: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.231608: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.233891: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.235027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:19:38.235419: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 14:19:38.245949: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 14:19:38.246505: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55db2cc4db60 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:19:38.246529: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 14:19:38.455889: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.458639: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.460093: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55db2ccd0100 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 14:19:38.460135: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:19:38.460146: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 14:19:38.460958: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.462957: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:19:38.463093: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.464922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 14:19:38.465020: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:19:38.465063: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 14:19:38.465100: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 14:19:38.465136: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 14:19:38.465173: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 14:19:38.465209: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 14:19:38.465245: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:19:38.465353: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.467195: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.469012: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.470839: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.472569: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 14:19:38.473136: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 14:19:38.478355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 14:19:38.478385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 14:19:38.478396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 14:19:38.478405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 14:19:38.479026: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.480768: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.482474: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.484145: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 14:19:38.484963: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 14:19:38.486535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 14:19:40.654003: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 14:19:41.870645: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 23, in <module>
+    encoder_imgs = encoder_imgs.reshape((encoder_imgs.shape[0], 23*23*128))
+NameError: name 'encoder_imgs' is not defined
+2020-05-01 18:03:13.393023: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:03:13.393141: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:03:13.393154: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 18:03:56.126964: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 18:03:56.887845: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.889255: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:03:56.889386: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.890720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:03:56.892256: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:03:56.897069: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:03:56.908759: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:03:56.911311: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:03:56.929421: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:03:56.932482: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:03:56.962766: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:03:56.962974: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.965182: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.966089: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.967041: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:56.967877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:03:56.968211: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 18:03:56.976914: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 18:03:56.977594: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56271df89710 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:03:56.977615: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 18:03:57.175250: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.177917: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.179323: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56271d8fc0c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:03:57.179365: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:03:57.179378: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:03:57.180223: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.182025: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:03:57.182158: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.183824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:03:57.183933: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:03:57.183982: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:03:57.184026: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:03:57.184069: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:03:57.184111: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:03:57.184154: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:03:57.184197: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:03:57.184297: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.185991: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.187715: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.189380: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.190998: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:03:57.191557: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:03:57.197176: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 18:03:57.197208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 18:03:57.197219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 18:03:57.197227: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 18:03:57.197844: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.199469: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.201090: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.202644: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 18:03:57.203440: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:03:57.205005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 18:03:59.121765: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:04:00.382573: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 33, in <module>
+    model = XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_jobs=-1)
+NameError: name 'XGBRegressor' is not defined
+2020-05-01 18:07:01.531327: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:07:01.531464: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:07:01.531474: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 18:07:43.553147: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 18:07:44.315610: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.317063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:07:44.317194: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.318515: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:07:44.320324: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:07:44.338494: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:07:44.348988: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:07:44.351113: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:07:44.365330: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:07:44.368084: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:07:44.392508: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:07:44.392718: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.393749: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.394642: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.395523: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.396357: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:07:44.396964: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 18:07:44.406586: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 18:07:44.407301: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55cce5a6ab90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:07:44.407324: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 18:07:44.603646: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.606335: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.607825: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55cce5aed130 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:07:44.607871: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:07:44.607882: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:07:44.608421: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.610377: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:07:44.610546: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.612421: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:07:44.612519: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:07:44.612566: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:07:44.612606: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:07:44.612646: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:07:44.612708: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:07:44.612751: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:07:44.612792: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:07:44.612903: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.614875: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.616842: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.618803: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.620454: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:07:44.620994: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:07:44.626906: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 18:07:44.626940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 18:07:44.626953: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 18:07:44.626961: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 18:07:44.627637: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.629513: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.631366: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.633139: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 18:07:44.633887: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:07:44.635599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 18:07:46.591403: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:07:47.853940: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 33, in <module>
+    model = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_jobs=-1)
+NameError: name 'lr' is not defined
+2020-05-01 18:11:05.605813: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:11:05.605934: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:11:05.605944: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 18:11:47.748735: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 18:11:48.510577: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.512027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:11:48.512171: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.513493: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:11:48.514346: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:11:48.518860: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:11:48.528707: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:11:48.530064: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:11:48.534406: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:11:48.536216: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:11:48.545520: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:11:48.545688: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.546951: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.548148: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.549337: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.550466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:11:48.550917: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 18:11:48.561614: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 18:11:48.562074: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a545e0e9f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:11:48.562099: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 18:11:48.770531: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.773173: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.774600: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a545780ba0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:11:48.774644: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:11:48.774678: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:11:48.775297: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.777245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:11:48.777387: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.779311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:11:48.779412: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:11:48.779458: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:11:48.779497: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:11:48.779536: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:11:48.779574: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:11:48.779612: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:11:48.779650: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:11:48.779793: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.781633: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.783459: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.785263: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.786992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:11:48.787596: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:11:48.793543: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 18:11:48.793582: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 18:11:48.793595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 18:11:48.793603: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 18:11:48.794290: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.796071: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.797792: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.799453: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 18:11:48.800302: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:11:48.802017: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 18:11:50.784244: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:11:52.010440: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+/usr/lib64/python3.5/site-packages/sklearn/externals/joblib/externals/loky/backend/utils.py:51: UserWarning: Failed to kill subprocesses on this platform. Pleaseinstall psutil: https://github.com/giampaolo/psutil
+  warnings.warn("Failed to kill subprocesses on this platform. Please"
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 38, in <module>
+    grid_result = grid_search.fit(encoder_train, Y_train)
+  File "/usr/lib64/python3.5/site-packages/sklearn/model_selection/_search.py", line 722, in fit
+    self._run_search(evaluate_candidates)
+  File "/usr/lib64/python3.5/site-packages/sklearn/model_selection/_search.py", line 1191, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/usr/lib64/python3.5/site-packages/sklearn/model_selection/_search.py", line 711, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/usr/lib64/python3.5/site-packages/sklearn/externals/joblib/parallel.py", line 996, in __call__
+    self.retrieve()
+  File "/usr/lib64/python3.5/site-packages/sklearn/externals/joblib/parallel.py", line 899, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/usr/lib64/python3.5/site-packages/sklearn/externals/joblib/_parallel_backends.py", line 517, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/usr/lib64/python3.5/concurrent/futures/_base.py", line 405, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.5/concurrent/futures/_base.py", line 357, in __get_result
+    raise self._exception
+sklearn.externals.joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+  File "XGBoost_Regressor.py", line 19
+    Regressor:
+    ^
+IndentationError: unexpected indent
+2020-05-01 18:56:06.697586: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:56:06.697707: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-01 18:56:06.697719: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-01 18:56:48.770149: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-01 18:56:49.588589: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.589910: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:56:49.590038: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.591261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:56:49.593050: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:56:49.614055: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:56:49.625314: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:56:49.627559: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:56:49.644827: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:56:49.647685: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:56:49.676519: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:56:49.676735: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.677938: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.679965: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.681125: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.682212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:56:49.682807: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-01 18:56:49.694180: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-01 18:56:49.694828: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55700d6cf500 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:56:49.694852: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-01 18:56:49.887230: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.889924: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.891417: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55700d751aa0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-01 18:56:49.891462: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:56:49.891474: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-01 18:56:49.892384: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.894378: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:56:49.894545: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.896436: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-01 18:56:49.896552: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:56:49.896607: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-01 18:56:49.896653: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-01 18:56:49.896727: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-01 18:56:49.896775: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-01 18:56:49.896821: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-01 18:56:49.896868: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:56:49.896982: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.898960: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.900921: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.902863: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.904717: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-01 18:56:49.905278: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-01 18:56:49.911649: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-01 18:56:49.911706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-01 18:56:49.911718: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-01 18:56:49.911727: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-01 18:56:49.912373: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.914249: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.916088: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.918224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-01 18:56:49.918959: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-01 18:56:49.920655: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-01 18:56:51.941368: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-01 18:56:53.180586: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+
+
+---------- Predictions ----------
+
+preds =  [0.28779584 0.22578296 0.32380193 ... 0.5511211  0.74064285 0.25655997]
+Traceback (most recent call last):
+  File "XGBoost_Regressor.py", line 30, in <module>
+    np.savetxt('log/preds_XGBr_lr{}_n{}.txt'.format(lr, ntrees), preds, delimiter=',')
+NameError: name 'ntrees' is not defined
+2020-05-02 11:45:38.200816: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-02 11:45:38.200921: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-02 11:45:38.200932: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-05-02 11:46:20.328803: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-05-02 11:46:21.089487: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.091452: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-02 11:46:21.091615: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.093413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-02 11:46:21.094991: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-02 11:46:21.114407: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-02 11:46:21.125861: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-02 11:46:21.128221: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-02 11:46:21.145481: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-02 11:46:21.148457: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-02 11:46:21.175700: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-02 11:46:21.175914: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.177238: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.178477: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.179825: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.183799: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-02 11:46:21.184468: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-05-02 11:46:21.195831: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199995000 Hz
+2020-05-02 11:46:21.196517: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55998f307bf0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-02 11:46:21.196541: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-02 11:46:21.387698: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.390297: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.391732: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55998f38a190 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-05-02 11:46:21.391771: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-02 11:46:21.391781: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla P100-SXM2-16GB, Compute Capability 6.0
+2020-05-02 11:46:21.392265: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.393950: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:00:09.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-02 11:46:21.394073: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.395862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 1 with properties: 
+pciBusID: 0000:00:0b.0 name: Tesla P100-SXM2-16GB computeCapability: 6.0
+coreClock: 1.4805GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2020-05-02 11:46:21.395965: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-02 11:46:21.396010: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-05-02 11:46:21.396049: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-05-02 11:46:21.396086: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-05-02 11:46:21.396124: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-05-02 11:46:21.396162: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-05-02 11:46:21.396200: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-02 11:46:21.396312: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.398238: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.400220: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.401992: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.403846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0, 1
+2020-05-02 11:46:21.404425: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-05-02 11:46:21.410702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-02 11:46:21.410738: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 1 
+2020-05-02 11:46:21.410751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N Y 
+2020-05-02 11:46:21.410760: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 1:   Y N 
+2020-05-02 11:46:21.411374: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.413274: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.415158: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.417279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:09.0, compute capability: 6.0)
+2020-05-02 11:46:21.417937: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-05-02 11:46:21.419671: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:00:0b.0, compute capability: 6.0)
+2020-05-02 11:46:23.374345: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-05-02 11:46:24.671525: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+/usr/lib/python3.5/site-packages/xgboost/__init__.py:28: FutureWarning: Python 3.5 support is deprecated; XGBoost will require Python 3.6+ in the near future. Consider upgrading to Python 3.6+.
+  FutureWarning)
+Using TensorFlow backend.
+You are going to read from: data/train_split_v4.csv and data/test_split_v4.csv
+Total number of images: 1540
+shape X: 13600 1540,  disease_ID (Y): 13600 1540
+Count of classes:  Counter({0: 7966, 2: 5447, 1: 187})
+New diseaseID shape:  (9097,)
+New X shape:  (9097, 120000)
+New Count of classes:  Counter({0: 4500, 2: 4500, 1: 97})
+Undersample shapes:
+diseaseID_train.shape: (9097,)
+X_train.shape: (9097, 120000)
+X_train.shape: (9097, 200, 200, 3)
+X_test.shape: (1540, 200, 200, 3)
+Normal train:  (4500,)
+Pneumonia train:  (4500,)
+COVID train:  (97,)
+*******************************************************
+Normal test:  (885,)
+Pneumonia test:  (591,)
+COVID test:  (64,)
+(2425, 180, 180, 3)
+(2425,)
+X_train.shape:  (11522, 180, 180, 3)
+diseaseID_train.shape:  (11522,)
+X_test_news.shape:  (1600, 180, 180, 3)
+diseaseID_test_news.shape:  (1600,)
+X_test.shape:  (3140, 180, 180, 3)
+diseaseID_test.shape:  (3140,)
+encoder_test.shape (3140, 23, 23, 128)
+encoder_train.shape (11522, 23, 23, 128)
+
+
+---------- Predictions ----------
+
+preds =  [0.5316456  0.27555162 0.3379129  ... 0.49833626 0.7195031  0.33153626]
+2020-05-02 16:14:51.185224: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-02 16:14:51.185628: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:
+2020-05-02 16:14:51.185654: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
