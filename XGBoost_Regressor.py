@@ -18,7 +18,7 @@ del outputs
 #------------XGBoost------------#
 # Regressor:
 lr = 0.01
-n_trees = 200
+n_trees = 300
 xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_trees, n_jobs=-1)
 xgbr.fit(encoder_train, Y_train)
 encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
