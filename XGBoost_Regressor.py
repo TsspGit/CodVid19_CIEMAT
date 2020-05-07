@@ -17,14 +17,17 @@ del outputs
 
 #------------XGBoost------------#
 # Regressor:
-lr = 0.01
-n_trees = 200
-xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_trees, n_jobs=-1)
-xgbr.fit(encoder_train, Y_train)
-encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
-preds = xgbr.predict(encoder_test)
-nocovid = preds[np.where(Y_test == 0)]
-covid = preds[np.where(Y_test == 1)]
-print("\n\n---------- Predictions ----------\n")
-print("preds = ", preds)
-np.savetxt('log/preds_XGBr_lr{}_n{}.txt'.format(lr, n_trees), preds, delimiter=',')
+lr = 0.005
+n_trees = 250
+depth_list = [1, 3, 5, 7]
+for depth in depth_list:
+    print('#'*10 +' max depth = {} '.format(depth)+ '#'*10)
+    xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_trees, max_depth=depth, n_jobs=-1)
+    xgbr.fit(encoder_train, Y_train)
+    encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
+    preds = xgbr.predict(encoder_test)
+    nocovid = preds[np.where(Y_test == 0)]
+    covid = preds[np.where(Y_test == 1)]
+    print("\n\n---------- Predictions ----------\n")
+    print("preds = ", preds)
+    np.savetxt('log/preds_XGBr_lr{}_n{}_maxdepth{}.txt'.format(lr, n_trees, depth), preds, delimiter=',')
