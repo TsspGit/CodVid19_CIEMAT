@@ -33,7 +33,7 @@ def Transformation_main(train_path, test_path):
     X_test = X_test/255
     X_train = X_train/255
     #------------Use the best Autoencoder architecture------------#
-    best_model_path = 'hdf_files/Autoencoder_covid_v4.hdf5'
+    best_model_path = 'hdf_files/Autoencoder_covid_v5.hdf5'
     model = load_model(best_model_path)
     encoder = Model(model.layers[0].input, model.layers[6].output)
     encoder_test = encoder.predict(X_test)
