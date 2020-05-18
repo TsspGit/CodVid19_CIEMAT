@@ -41,8 +41,8 @@ def Transformation_main(train_path, test_path):
     print('encoder_test.shape', encoder_test.shape)
     encoder_train = encoder.predict(X_train)
     print('encoder_train.shape', encoder_train.shape)
-    encoder_train = encoder_train.reshape((encoder_train.shape[0], 23*23*128))
-    encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
+    encoder_train = encoder_train.reshape((encoder_train.shape[0], 23*23*64))
+    encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*64))
     output = {'encoder_train': encoder_train,
              'encoder_test': encoder_test,
              'Y_test': Y_test,

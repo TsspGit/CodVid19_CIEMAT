@@ -23,7 +23,7 @@ depth = 3
 print('#'*10 +' max depth = {} '.format(depth)+ '#'*10)
 xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_trees, max_depth=depth, n_jobs=-1)
 xgbr.fit(encoder_train, Y_train)
-encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*128))
+encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*64))
 preds = xgbr.predict(encoder_test)
 nocovid = preds[np.where(Y_test == 0)]
 covid = preds[np.where(Y_test == 1)]
