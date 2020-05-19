@@ -28,12 +28,10 @@ And the project would be copied to your current folder.
 The info about the data and how to download it is in:
 https://github.com/lindawangg/COVID-Net
 
-Link to download the images:
-https://drive.google.com/open?id=1AQDqGTAn4XshuR76LNmHnK70TkFpAzRq
-
 ## 3. Folders explanation
 ### data/
 In this folder you can find a **resize/** folder with a python code for input the images and resize them. Also you can find a train and a test folder with the corresponding images.
+Take the last version.
 
 ### Figures/
 Autodescriptive folder name.
