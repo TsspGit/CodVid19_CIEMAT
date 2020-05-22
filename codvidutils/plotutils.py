@@ -2,7 +2,7 @@ __author__ = '@iRodGit'
 
 
 
-def plot_histogram(y_true, y_pred,labels):
+def plot_histogram(y_true, y_pred,labels,inters=50):
     
     import matplotlib.pyplot as plt
     import numpy as np
@@ -12,9 +12,9 @@ def plot_histogram(y_true, y_pred,labels):
 
     lw=2
     for value in np.unique(y_true):
-        plt.hist(y_pred[(y_true==value)],50,histtype='step',lw=lw, label= labels[value])
+        plt.hist(y_pred[(y_true==value)],inters,histtype='step',lw=lw, label= labels[value])
     
-    plt.ylabel('Number of events /0.01')
+    plt.ylabel('Number of events /'+ str(1.0/inters)
     plt.xlabel('Score')
     plt.yscale("log")
     plt.legend( loc='upper center')
