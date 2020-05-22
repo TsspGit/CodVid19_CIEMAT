@@ -25,7 +25,7 @@ def new_pictures_arrays(pictures, strides=5, kernel=(180,180)):
     
     return news.reshape(news.shape[0]*news.shape[1], kernel[0],kernel[1],pictures.shape[3])
 
-def underbalance_imgs(diseaseID, X):
+def underbalance_imgs(diseaseID, X,dicto):
     '''
     This function balances the data:
     Inputs: disease_ID: array of the train and test categories.
@@ -37,7 +37,6 @@ def underbalance_imgs(diseaseID, X):
     from imblearn.under_sampling import RandomUnderSampler
     counter = Counter (diseaseID)
     print('Count of classes: ', counter)
-    dicto = {2: 4500, 0: 4500, 1:97}
     X = X.reshape(X.shape[0],-1)
     under = RandomUnderSampler(sampling_strategy =dicto)
     X, diseaseID = under.fit_resample(X, diseaseID)
@@ -46,3 +45,26 @@ def underbalance_imgs(diseaseID, X):
     print('New X shape: ', X.shape)
     print('New Count of classes: ', Counter (diseaseID))
     return diseaseID, X
+
+def adding_images(X, Y,strides= 5):#kernel =None ):
+    from codvidutils import nwpic as nw
+    from numpy import concatenate
+    new_X = nw.new_pictures_arrays(X[Y==1],strides)
+    X = X[:,10:190,10:190]
+    new_Y = np.ones(new_X.shape[0])
+    X = concatenate([X,new_X],axis=0)
+    Y = concatenate([Y,new_Y],axis=0)
+    return X, Y
+
+def load_pictures (data_frame,data_dir,channels):
+    import numpy as np
+    from PIL import Image
+    pics = []
+    for img in data_frame['image_path'].values:
+        if channels ==3:
+            pics.append(np.array(Image.open(data_dir + img))[:, :,:3])
+        else:
+            pics.append(np.array(Image.open(data_dir + img))[:, :,0])
+
+    return np.array(pics)
+
