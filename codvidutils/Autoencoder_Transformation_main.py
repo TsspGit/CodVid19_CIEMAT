@@ -9,7 +9,7 @@ def Transformation_main(train_path, test_path):
     '''Outputs the final encoded images for training or testing the
     following classification algorithm.
     '''
-    trns = Transformation(train_path, test_path)
+    trns = Transformation(train_path, test_path, best_model_path='hdf_files/Autoencoder_covid_v5.hdf5')
     #------------Read images and prepare dataset------------#
     train_class, test_class = trns.read_imgs_paths()
     X_train, X_test, diseaseID_train, diseaseID_test = trns.read_imgs(train_class, test_class)
@@ -33,7 +33,6 @@ def Transformation_main(train_path, test_path):
     X_test = X_test/255
     X_train = X_train/255
     #------------Use the best Autoencoder architecture------------#
-    best_model_path = 'hdf_files/Autoencoder_covid_v5.hdf5'
     model = load_model(best_model_path)
     encoder = Model(model.layers[0].input, model.layers[6].output)
     encoder_test = encoder.predict(X_test)
