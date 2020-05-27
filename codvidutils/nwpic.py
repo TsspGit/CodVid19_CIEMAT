@@ -37,7 +37,7 @@ def underbalance_imgs(diseaseID, X):
     from imblearn.under_sampling import RandomUnderSampler
     counter = Counter (diseaseID)
     print('Count of classes: ', counter)
-    dicto = {2: 4500, 0: 4500, 1:97}
+    dicto = {2: 4500, 0: 4500, 1: 187}
     X = X.reshape(X.shape[0],-1)
     under = RandomUnderSampler(sampling_strategy =dicto)
     X, diseaseID = under.fit_resample(X, diseaseID)
