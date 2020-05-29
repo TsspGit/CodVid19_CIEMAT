@@ -8,7 +8,7 @@ from codvidutils.Autoencoder_Transformation_main import Transformation_main
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import StratifiedKFold
 
-outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v4.csv')
+outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v5.csv')
 Y_test = outputs['Y_test']
 Y_train = outputs['Y_train']
 encoder_train = outputs['encoder_train']
