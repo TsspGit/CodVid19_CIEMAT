@@ -8,7 +8,7 @@ from codvidutils.Autoencoder_Uncertainty_Transformation_main import Transformati
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import StratifiedKFold
 
-for it in range(5):
+for it in range(6, 11):
     model = 'hdf_files/Uncertainty_AE_Covid_{}.hdf5'.format(it+1)
     outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v5.csv', model)
     Y_test = outputs['Y_test']

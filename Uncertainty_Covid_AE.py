@@ -73,7 +73,7 @@ def autoencoder_model(p_drop, p_l2):
 
 p_drop = 0.1
 p_l2 = 0.005
-for it in range(5):
+for it in range(6, 11):
     tf.keras.backend.clear_session()
     best_model_path = 'hdf_files/Uncertainty_AE_Covid_{}.hdf5'.format(it+1)
     checkpoint = ModelCheckpoint(best_model_path, monitor='loss', verbose=1, save_best_only=True, mode='min')
