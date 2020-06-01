@@ -7,12 +7,15 @@ def weigths2loss(Y):
     from numpy import unique
     if len(unique(Y)) != 2:
         raise ValueError("Y must have only two labels 0 and 1.")
+        
     else:
         num_0_class = (Y[Y== 0]).shape[0]
         num_1_class = (Y[Y== 1]).shape[0]
-        
-        dict_weigths = {0: num_1_class/ (num_0_class+num_1_class), 1: num_0_class/ (num_0_class+num_1_class)}
-        
+
+        dict_weigths = {0: num_1_class/ (num_0_class+num_1_class), 1: num_0_class/ (num_0_class+num_1_class)
+
+    return dict_weigths
+
     return dict_weigths
 
 def adding_images(X, Y,strides= 5):#kernel =None ):
@@ -78,4 +81,3 @@ def hist_with_unce (hist_bins, counts, uncer_counts, color1, color2,lw=2, label 
     for i in range(counts.shape[0]):
         plt.fill_between(hist_bins[i:i+2], counts[i]-uncer_counts[i],counts[i]+uncer_counts[i], color=color2)
 
-    
