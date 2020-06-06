@@ -5,10 +5,9 @@ import os
 import matplotlib.pyplot as plt
 import xgboost as xgb
 from codvidutils.Autoencoder_Uncertainty_Transformation_main import Transformation_main
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import StratifiedKFold
+import pickle
 
-for it in range(6, 11):
+for it in range(0, 10):
     model = 'hdf_files/Uncertainty_AE_Covid_{}.hdf5'.format(it+1)
     outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v5.csv', model)
     Y_test = outputs['Y_test']
@@ -25,6 +24,8 @@ for it in range(6, 11):
     print('#'*10 +' max depth = {} '.format(depth)+ '#'*10)
     xgbr = xgb.XGBRegressor(objective ='reg:logistic', learning_rate = lr, n_estimators = n_trees, max_depth=depth, n_jobs=-1)
     xgbr.fit(encoder_train, Y_train)
+    # save model
+    pickle.dump(xgbr, open('log/XGBr_uncmodel_{}.pkl'.format(it+1), "wb"))
     encoder_test = encoder_test.reshape((encoder_test.shape[0], 23*23*70))
     preds = xgbr.predict(encoder_test)
     nocovid = preds[np.where(Y_test == 0)]
