@@ -45,5 +45,6 @@ def Transformation_main(train_path, test_path, best_model_path=None):
     output = {'encoder_train': encoder_train,
              'encoder_test': encoder_test,
              'Y_test': Y_test,
-             'Y_train': Y_train}
+             'Y_train': Y_train,
+             'X_test': X_test}
     return output
