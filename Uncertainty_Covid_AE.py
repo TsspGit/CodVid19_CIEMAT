@@ -34,37 +34,35 @@ del diseaseID_train
 Y_train[Y_train==2]=0
 Y_test = np.copy(diseaseID_test)
 Y_test[Y_test==2]=0
-X_test = X_test/255
-X_train = X_train/255
 
 def autoencoder_model(p_drop, p_l2):
     input_img = Input(shape=X_train.shape[1:])
-    encoder = Dropout(rate = p_drop)(input_img)
+    encoder = Dropout(rate = p_drop)(input_img, training=True)
     encoder = Conv2D(256+25, (3, 3), activation='relu', padding='same', name='Econv2d_1', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(input_img)
     encoder = MaxPooling2D((2,2), padding='same', name='Emaxpool2d_1')(encoder)
-    encoder = Dropout(rate = p_drop)(encoder)
+    encoder = Dropout(rate = p_drop)(encoder, training=True)
     encoder = Conv2D(128+12, (3, 3), activation='relu', padding='same', name='Econv2d_2', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(encoder)
     encoder = MaxPooling2D((2,2), padding='same', name='Emaxpool2d_2')(encoder)
-    encoder = Dropout(rate = p_drop)(encoder)
+    encoder = Dropout(rate = p_drop)(encoder, training=True)
     encoder = Conv2D(64+6, (3, 3), activation='relu', padding='same', name='Econv2d_3', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(encoder)
     encoder = MaxPooling2D((2,2), padding='same', name='Emaxpool2d_3')(encoder)
 
-    decoder = Dropout(rate = p_drop)(encoder)
+    decoder = Dropout(rate = p_drop)(encoder, training=True)
     decoder = Conv2D(64+6, (3,3), activation='relu', padding='same', name='Dconv2d_1', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(decoder)
     decoder = UpSampling2D((2, 2), name='Dupsamp_1')(decoder)
-    decoder = Dropout(rate = p_drop)(decoder)
+    decoder = Dropout(rate = p_drop)(decoder, training=True)
     decoder = Conv2D(128+12, (3, 3), activation='relu', padding='same', name='Dconv2d_2', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(decoder)
     decoder = UpSampling2D((2, 2), name='Dupsamp_2')(decoder)
-    decoder = Dropout(rate = p_drop)(decoder)
+    decoder = Dropout(rate = p_drop)(decoder, training=True)
     decoder = Conv2D(256+25, (3, 3), activation='relu', name='Dconv2d_3', 
                      bias_regularizer = l2(p_l2), kernel_regularizer=l2(p_l2))(decoder)
     decoder = UpSampling2D((2, 2), name='Dupsamp_3')(decoder)
-    decoder = Dropout(rate = p_drop)(decoder)
+    decoder = Dropout(rate = p_drop)(decoder, training=True)
     decoder = Conv2D(3, (3, 3), activation='sigmoid', padding='same', name='Dconv2d_out')(decoder)
 
     autoencoder = Model(input_img, decoder)
@@ -73,14 +71,15 @@ def autoencoder_model(p_drop, p_l2):
 
 p_drop = 0.1
 p_l2 = 0.005
-for it in range(6, 11):
-    tf.keras.backend.clear_session()
-    best_model_path = 'hdf_files/Uncertainty_AE_Covid_{}.hdf5'.format(it+1)
-    checkpoint = ModelCheckpoint(best_model_path, monitor='loss', verbose=1, save_best_only=True, mode='min')
-    amsgrad = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, amsgrad=True)
-    autoencoder = autoencoder_model(p_drop, p_l2)
-    autoencoder.compile(optimizer=amsgrad, loss='mse', metrics=['acc', 'mse'])
-    strategy = tf.distribute.MirroredStrategy()
-    with strategy.scope():
-        history = autoencoder.fit(X_train, X_train, epochs=10, batch_size=64, shuffle=False, callbacks=[checkpoint],
-                                  validation_data=(X_test, X_test))
+tf.keras.backend.clear_session()
+rescale_gen = tf.keras.preprocessing.image.ImageDataGenerator(rescale = 1./255)
+best_model_path = 'hdf_files/Uncertainty_AE_Covid.hdf5'
+checkpoint = ModelCheckpoint(best_model_path, monitor='loss', verbose=1, save_best_only=True, mode='min')
+amsgrad = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, amsgrad=True)
+autoencoder = autoencoder_model(p_drop, p_l2)
+autoencoder.compile(optimizer=amsgrad, loss='mse', metrics=['acc', 'mse'])
+strategy = tf.distribute.MirroredStrategy()
+with strategy.scope():
+    history = autoencoder.fit(rescale_gen.flow(X_train, X_train, batch_size=64), epochs=10, shuffle=False, callbacks=[checkpoint],
+                              validation_data=(X_test/255, X_test/255))
+print("\n\n" + "-"*10 + " AE trained " + "-"*10 + "\n\n")

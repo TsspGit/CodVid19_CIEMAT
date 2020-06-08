@@ -8,7 +8,7 @@ from codvidutils.Autoencoder_Uncertainty_Transformation_main import Transformati
 import pickle
 
 for it in range(0, 10):
-    model = 'hdf_files/Uncertainty_AE_Covid_{}.hdf5'.format(it+1)
+    model = 'hdf_files/Uncertainty_AE_Covid.hdf5'
     outputs = Transformation_main('data/train_split_v4.csv', 'data/test_split_v5.csv', model)
     Y_test = outputs['Y_test']
     Y_train = outputs['Y_train']
